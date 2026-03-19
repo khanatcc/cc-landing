@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20-Minute Practice Diagnostic | Contemplative CrossFit</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0a0a0a;
+            --secondary: #ffffff;
+            --accent: #f0b232;
+            --muted: #666666;
+            --light-bg: #f9f9f9;
+            --warning: #d32f2f;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            color: var(--primary);
+            background: var(--secondary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        p {
+            font-size: 1.05rem;
+            color: var(--muted);
+            margin-bottom: 1.25rem;
+        }
+
+        .accent-text {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 6rem 2rem 4rem;
+            background: var(--secondary);
+            border-bottom: 2px solid var(--light-bg);
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .hero h1 {
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--muted);
+            max-width: 700px;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            line-height: 1.7;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            padding: 1.1rem 2.8rem;
+            background: var(--primary);
+            color: var(--secondary);
+            text-decoration: none;
+            font-size: 1.05rem;
+            font-weight: 600;
+            border: 2px solid var(--primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-button:hover {
+            background: var(--secondary);
+            color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: var(--primary);
+        }
+
+        .cta-button.secondary:hover {
+            background: var(--light-bg);
+        }
+
+        .cta-button.tertiary {
+            background: transparent;
+            color: var(--primary);
+            padding: 0.75rem 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        /* Section */
+        section {
+            padding: 4rem 2rem;
+        }
+
+        section.alt {
+            background: var(--light-bg);
+            border-top: 2px solid #e0e0e0;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        /* What Happens Section */
+        .what-happens {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+            margin-top: 2rem;
+        }
+
+        .what-happens-item {
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .what-happens-item:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .what-happens-item:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .what-happens-item:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 3rem;
+            height: 3rem;
+            background: var(--primary);
+            color: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .what-happens-item h3 {
+            margin-bottom: 0.75rem;
+        }
+
+        .what-happens-item p {
+            color: var(--muted);
+            font-size: 1rem;
+        }
+
+        /* Social Proof Section */
+        .social-proof {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .proof-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .proof-stat {
+            text-align: center;
+        }
+
+        .proof-stat .number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: block;
+        }
+
+        .proof-stat .label {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-card {
+            padding: 1.5rem;
+            background: var(--secondary);
+            border-left: 3px solid var(--accent);
+            border-radius: 2px;
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .testimonial-card:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .testimonial-card:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .testimonial-card:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .testimonial-text {
+            font-size: 0.95rem;
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        /* Who This Is For */
+        .proof {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .proof-card {
+            padding: 2rem;
+            background: var(--secondary);
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+        }
+
+        .proof-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .proof-card p {
+            font-size: 0.95rem;
+            color: var(--muted);
+        }
+
+        /* Not For You Section */
+        .not-for-you {
+            background: var(--primary);
+            color: var(--secondary);
+            padding: 2rem;
+            margin-top: 2rem;
+            border-radius: 4px;
+        }
+
+        .not-for-you h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .not-for-you ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .not-for-you li {
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .not-for-you li:before {
+            content: "—";
+            position: absolute;
+            left: 0;
+        }
+
+        /* Mentor Section */
+        .mentors {
+            margin-top: 3rem;
+        }
+
+        .mentor-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .mentor-card {
+            padding: 2rem;
+            background: var(--light-bg);
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .mentor-card:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .mentor-card:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .mentor-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .mentor-role {
+            color: var(--accent);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .mentor-bio {
+            font-size: 0.95rem;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        .mentor-link, .testimonial-link {
+            display: inline-block;
+            margin-top: 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .mentor-link:hover, .testimonial-link:hover {
+            opacity: 0.8;
+        }
+
+        /* Timeline Section */
+        .timeline {
+            margin-top: 2rem;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .timeline-item:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .timeline-item:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .timeline-item:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .timeline-marker {
+            min-width: 100px;
+            font-weight: 700;
+            color: var(--accent);
+            text-align: right;
+        }
+
+        .timeline-content h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .timeline-content p {
+            color: var(--muted);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-example {
+            font-size: 0.9rem;
+            color: var(--primary);
+            background: var(--light-bg);
+            padding: 0.75rem 1rem;
+            margin-top: 1rem;
+            border-left: 2px solid var(--accent);
+            font-style: italic;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.05rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--primary);
+            transition: color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: var(--accent);
+        }
+
+        .faq-toggle {
+            display: inline-block;
+            width: 1.5rem;
+            height: 1.5rem;
+            border: 2px solid var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.open .faq-toggle {
+            background: var(--primary);
+            color: var(--secondary);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, margin-top 0.3s ease;
+            color: var(--muted);
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 500px;
+            margin-top: 1.5rem;
+        }
+
+        /* Email Capture */
+        .email-capture {
+            background: var(--primary);
+            color: var(--secondary);
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .email-capture h3 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .email-capture p {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .email-form {
+            display: flex;
+            gap: 0.5rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .email-form input {
+            flex: 1;
+            padding: 0.9rem;
+            border: none;
+            border-radius: 2px;
+            font-size: 1rem;
+        }
+
+        .email-form button {
+            padding: 0.9rem 1.5rem;
+            background: var(--accent);
+            color: var(--primary);
+            border: none;
+            border-radius: 2px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .email-form button:hover {
+            background: #e6a820;
+            transform: translateY(-2px);
+        }
+
+        /* CTA Section */
+        .final-cta {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: var(--primary);
+            color: var(--secondary);
+        }
+
+        .final-cta h2 {
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .final-cta p {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--muted);
+            border-top: 1px solid #e0e0e0;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .what-happens,
+            .proof,
+            .mentor-grid,
+            .testimonials,
+            .proof-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 4rem 2rem 3rem;
+            }
+
+            section {
+                padding: 3rem 2rem;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .timeline-marker {
+                text-align: left;
+            }
+
+            .email-form {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>You've Had the Breakthrough.<br>Now What?</h1>
+            <p class="hero-subtitle">You've had real experiences — meditation, psychedelics, genuine insight. But your daily life hasn't caught up. That gap has a structure, and it can be mapped.</p>
+            <a href="#book-call" class="cta-button">Book Your Call</a>
+        </div>
+    </section>
+
+    <!-- What Happens Section -->
+    <section>
+        <div class="container">
+            <h2>What Happens in 20 Minutes</h2>
+            <p>You'll experience exactly how Contemplative CrossFit's bootcamp works:</p>
+            
+            <div class="what-happens">
+                <div class="what-happens-item">
+                    <div class="step-number">1</div>
+                    <h3>We See Your Practice</h3>
+                    <p>You tell us what you've been doing—meditation, coaching, psychedelics, shadow work. No judgment. Just data.</p>
+                </div>
+                <div class="what-happens-item">
+                    <div class="step-number">2</div>
+                    <h3>We Name the Pattern</h3>
+                    <p>Together, we identify the specific systematic gap that's kept you stuck. The thing that would take years to figure out on your own.</p>
+                </div>
+                <div class="what-happens-item">
+                    <div class="step-number">3</div>
+                    <h3>We Show You the Map</h3>
+                    <p>You leave with a clear picture of where you are, what's actually holding you back, and whether the 12-week bootcamp is the right next step. If it's not, we'll tell you.</p>
+                </div>
+                <div class="what-happens-item">
+                    <div class="step-number">4</div>
+                    <h3>Now Imagine 12 Weeks</h3>
+                    <p>That 20 minutes is a sample. The bootcamp is that level of precision, daily, for 12 weeks. With a team watching how your mind moves.</p>
+                </div>
+            </div>
+
+            <!-- Social Proof -->
+            <div class="social-proof">
+                <div class="proof-stats">
+                    <div class="proof-stat">
+                        <span class="number">60+</span>
+                        <span class="label">Practitioners trained across 8 cohorts</span>
+                    </div>
+                    <div class="proof-stat">
+                        <span class="number">12</span>
+                        <span class="label">Weeks of intensive daily training & integration</span>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 2rem;">What Practitioners Say</h3>
+                <div class="testimonials">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">"My practice was on and off for years. I'd get discouraged because I was doing everything on my own. The amplification of your efforts being in this group is unbelievable. People here are full of integrity — they want progress for themselves, but they want it for each other."</div>
+                        <div class="testimonial-author">— Kristen, 4x bootcamp finisher</div>
+                        <a href="https://www.youtube.com/watch?v=RYwjMy_SID8" target="_blank" class="testimonial-link">Watch Kristen's Story →</a>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">"I felt like I was completely lost and spinning — but I didn't even know it. A lot of my path was built on ignoring and feeling safe. CC was a course correction. I'd rather be aware that I'm lost than think I know what's going on."</div>
+                        <div class="testimonial-author">— Ryan, Cohort 7</div>
+                        <a href="https://www.youtube.com/watch?v=NrObMSAiNQQ" target="_blank" class="testimonial-link">Watch Ryan's Story →</a>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">"I thought I was done looking for the next thing within spirituality. But there was something cryptic, something mysterious beyond the form. What drew me in was the culture of being yourself — welcoming all sides, including the parts I'd cast away."</div>
+                        <div class="testimonial-author">— Adrian, 2x bootcamp, upcoming mentor</div>
+                        <a href="https://www.youtube.com/watch?v=-uMMTet2FP8" target="_blank" class="testimonial-link">Watch Adrian's Story →</a>
+                    </div>
+                </div>
+
+                <div class="testimonials" style="margin-top: 1.5rem;">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">"The support is 24/7 — not like other courses where you get help on one scheduled day. You're going to get looked after. No man left behind. Everyone's just trying to work it all out together."</div>
+                        <div class="testimonial-author">— James, father &amp; entrepreneur, Australia</div>
+                        <a href="https://www.youtube.com/watch?v=YEpNqEyG3AE" target="_blank" class="testimonial-link">Watch James's Story →</a>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">"Before CC, I was ping-ponging between everything — spiritual pursuits, shadow work, psychedelics. The bootcamp gave me a structure that integrates everything. It's not just a practice, it's a living framework."</div>
+                        <div class="testimonial-author">— Janai</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">"I had bliss states, absorption, all the spiritual experiences. But my mind was still troublesome, painful, spiteful. CC wasn't about adding more experiences — it was about transforming the ground itself."</div>
+                        <div class="testimonial-author">— Tom</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who This Is For -->
+    <section class="alt">
+        <div class="container">
+            <h2>This Call Is For You If:</h2>
+            <div class="proof">
+                <div class="proof-card">
+                    <h3>You've Had Breakthrough Experiences</h3>
+                    <p>Meditation, ayahuasca, psychedelics, or genuine spiritual insight. But you're not sure how to integrate them into your actual life.</p>
+                </div>
+                <div class="proof-card">
+                    <h3>You're Ready to Stop Compartmentalizing</h3>
+                    <p>You're tired of "spiritual over here, regular life over there." You want a practice that works 24/7.</p>
+                </div>
+                <div class="proof-card">
+                    <h3>You've Seen Through the Spiritual Performance</h3>
+                    <p>You recognize the spiritual communities that promise enlightenment but produce isolation. You want something that actually lands.</p>
+                </div>
+                <div class="proof-card">
+                    <h3>You Have Stability But Not Direction</h3>
+                    <p>You have career, money, some shadow work done. But your practice feels incomplete. Like something's missing.</p>
+                </div>
+            </div>
+
+            <div class="not-for-you">
+                <h3>This is NOT for you if:</h3>
+                <ul>
+                    <li>You're looking for therapy or healing work around childhood trauma</li>
+                    <li>You want a meditation app or stress-relief program</li>
+                    <li>You're looking for relaxation or pleasant states</li>
+                    <li>You're not ready to have your assumptions about reality questioned</li>
+                    <li>You need flexibility — the bootcamp requires 12 weeks of committed daily practice</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who You'll Work With -->
+    <section>
+        <div class="container">
+            <h2>Who You'll Work With</h2>
+            <p>Your consultation call will be with one of our core team — practitioners and teachers living this work daily:</p>
+            
+            <div class="mentor-grid">
+                <div class="mentor-card">
+                    <div class="mentor-name">Khan</div>
+                    <div class="mentor-role">Co-Founder, Contemplative CrossFit</div>
+                    <div class="mentor-bio">Founder and primary operator of CC. Graduate student at the University of Michigan researching mindfulness pedagogy, negative side effects of meditative training, and assessment systems for mind training. Bridges academic rigor with lived contemplative experience.</div>
+                    <a href="https://www.youtube.com/watch?v=BxAr29usBKc" target="_blank" class="mentor-link">Watch Khan's Story →</a>
+                </div>
+                <div class="mentor-card">
+                    <div class="mentor-name">Frank Yang</div>
+                    <div class="mentor-role">Co-Founder, Contemplative CrossFit</div>
+                    <div class="mentor-bio">Pioneering contemplative teacher and artist whose journey spans over a decade of intensive practice — from transcendental meditation and vipassana to non-dual realization. Known for transmitting wisdom through creative expression and precise phenomenological mapping of meditative territory.</div>
+                    <a href="https://www.youtube.com/watch?v=VEXwbN6tnVo" target="_blank" class="mentor-link">Watch Frank's Story →</a>
+                </div>
+                <div class="mentor-card">
+                    <div class="mentor-name">John</div>
+                    <div class="mentor-role">Mentor, Contemplative CrossFit</div>
+                    <div class="mentor-bio">Eight years of dedicated body scanning and energetic cultivation. Medical field background integrated with Daoist internal alchemy and chi cultivation. After a severe spinal injury, developed "subtle bodybuilding" — systematic cultivation of energetic anatomy through breath, movement, and refined awareness.</div>
+                    <a href="https://www.youtube.com/watch?v=nYfXjxG_7Lw" target="_blank" class="mentor-link">Watch John's Story →</a>
+                </div>
+                <div class="mentor-card">
+                    <div class="mentor-name">Tyson</div>
+                    <div class="mentor-role">Mentor, Contemplative CrossFit</div>
+                    <div class="mentor-bio">Nearly 20 years of resistance training expertise fused with Buddhist philosophy into a novel pedagogy: alchemical lifting. Has worked with world-class athletes. His dissertation on exertion draws from Nagarjuna and Shantideva to articulate the distinction between mere exertion and the virtue of exertion liberated by wisdom.</div>
+                    <a href="https://www.youtube.com/watch?v=c0ZDeJBTp7s" target="_blank" class="mentor-link">Watch Tyson's Story →</a>
+                </div>
+            </div>
+
+            <p style="margin-top: 2rem; font-size: 0.95rem; color: var(--muted);">All mentors practice daily transmission and training under Mei Cheng, the transmission holder and founder of Contemplative CrossFit. This isn't a coaching program with individual consultants — it's a living lineage.</p>
+        </div>
+    </section>
+
+    <!-- The 12-Week Bootcamp -->
+    <section class="alt">
+        <div class="container">
+            <h2>What the 12-Week Bootcamp Actually Is</h2>
+            <p>That 20-minute call is a proof of concept. Cohort 9 starts May 25th. Here's what happens if you decide to go deeper:</p>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">Weeks 1-6</div>
+                    <div class="timeline-content">
+                        <h3>Stabilization</h3>
+                        <p>Daily practice. Meditation. You build capacity and notice your patterns in real time. Your mentor is watching how your mind moves.</p>
+                        <div class="timeline-example">"Your mentor notices you dissociate every time anger arises. That becomes your edge."</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">Weeks 7-9</div>
+                    <div class="timeline-content">
+                        <h3>Deconstruction</h3>
+                        <p>Direct pointing. We show you exactly how you construct reality. The narratives, the somatic habits, the emotional patterns.</p>
+                        <div class="timeline-example">"In a session with the transmission holder, you see directly — not conceptually — how you've been constructing a self that doesn't exist."</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">Weeks 10-12</div>
+                    <div class="timeline-content">
+                        <h3>Integration</h3>
+                        <p>You live it. Daily life becomes your practice. The compartmentalization between your spiritual life and your actual life collapses.</p>
+                        <div class="timeline-example">"Your wife notices you're different. Your co-workers notice. Not because you're performing growth — because the structure has changed."</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Email Capture for Illumination 101 -->
+    <section>
+        <div class="email-capture">
+            <h3>Not Ready to Book a Call Yet?</h3>
+            <p>Start with Illumination 101, our free 10-day direct-seeing course. It's designed to give you a taste of what CC actually is — and help you decide if you're ready for the bootcamp.</p>
+            <form class="email-form" onsubmit="handleEmailSubmit(event)">
+                <input type="email" placeholder="Your email" required>
+                <button type="submit">Get Illumination 101</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section>
+        <div class="container">
+            <h2>Common Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Do I need meditation experience?</span>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>No. You need maturity: 5-7 years of career work, some self-awareness, and a willingness to be clear with yourself about where you're stuck. Meditation helps, but it's not required. Psychedelic experience or other breakthrough work counts as practice.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What if I can't do 12 weeks right now?</span>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>We'll talk about that on your call. There's a once-per-week Foundation program for people who want the practice but need flexibility. But don't decide before you talk to someone—timing often becomes clearer in conversation.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How is this different from therapy or coaching?</span>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>Therapy works with your wounds. Coaching works with your goals. CC works with your capacity to see. We're not healing the past or optimizing performance — we're deconstructing the structure of how you experience reality itself.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How much does the 12-week bootcamp cost?</span>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>$2,450 for the complete 12-week intensive bootcamp.</strong> For context: a 10-day Vipassana retreat costs $0 but requires full-time commitment. A year of therapy costs $5,000-$10,000. A single ayahuasca ceremony costs $500-$1,500. We offer payment plans for people who are committed but need flexibility on timing.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What happens if I'm not ready?</span>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>We'll tell you directly. Not everyone is ready. The bootcamp requires a specific kind of maturity. If you're not there yet, we'll point you toward what might serve you better — or suggest you check in again in 6-12 months.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What's a transmission holder?</span>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>Someone who has completed the path and can point directly to what's true. In CC's case, Mei Cheng holds the lineage and leads the deepest work. The mentors train under him. This isn't a coaching program where everyone offers their personal perspective — it's a structured lineage with a realized teacher at the center.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to See What's Actually Possible?</h2>
+            <p>Book a 20-minute call with a CC mentor. You'll know immediately whether this is for you.</p>
+            <a href="#book-call" class="cta-button">Book Your Call Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Contemplative CrossFit © 2026. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const item = this.closest('.faq-item');
+                item.classList.toggle('open');
+            });
+        });
+
+        // Email capture form
+        function handleEmailSubmit(event) {
+            event.preventDefault();
+            const email = event.target.querySelector('input[type="email"]').value;
+            // Replace with your actual email capture endpoint
+            // For now, just redirect to Illumination 101 or show confirmation
+            alert('Check your email for Illumination 101. (Replace this with your actual email service integration)');
+            event.target.reset();
+        }
+
+        // Book call links
+        document.querySelectorAll('a[href="#book-call"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Replace with your actual Calendly or booking URL
+                // Add Calendly prefill for intake questions:
+                // name: [optional]
+                // email: [optional] 
+                // Additional questions can be added as custom invitee questions in Calendly settings
+                window.location.href = 'https://calendly.com/contemplativecrossfit/20-min-mentor-call?back=1&month=2026-03';
+            });
+        });
+    </script>
+</body>
+</html>
