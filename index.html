@@ -646,7 +646,7 @@
         <div class="container">
             <h1>You've Had the Breakthrough.<br>Now What?</h1>
             <p class="hero-subtitle">You've had real experiences — meditation, psychedelics, genuine insight. But your daily life hasn't caught up. That gap has a structure, and it can be mapped.</p>
-            <a href="#book-call" class="cta-button">Book Your Call</a>
+          <a href="https://scheduler.zoom.us/frank-yang-cc/coachingcall" class="cta-button">Book Your Call</a>
         </div>
     </section>
 
@@ -929,16 +929,6 @@
                 item.classList.toggle('open');
             });
         });
-
-        // Email capture form
-        function handleEmailSubmit(event) {
-            event.preventDefault();
-            const email = event.target.querySelector('input[type="email"]').value;
-            // Replace with your actual email capture endpoint
-            // For now, just redirect to Illumination 101 or show confirmation
-            alert('Check your email for Illumination 101. (Replace this with your actual email service integration)');
-            event.target.reset();
-        }
 
         // Book call links
         document.querySelectorAll('a[href="#book-call"]').forEach(link => {
