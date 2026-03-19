@@ -838,17 +838,7 @@
         </div>
     </section>
 
-    <!-- Email Capture for Illumination 101 -->
-    <section>
-        <div class="email-capture">
-            <h3>Not Ready to Book a Call Yet?</h3>
-            <p>Start with Illumination 101, our free 10-day direct-seeing course. It's designed to give you a taste of what CC actually is — and help you decide if you're ready for the bootcamp.</p>
-            <form class="email-form" onsubmit="handleEmailSubmit(event)">
-                <input type="email" placeholder="Your email" required>
-                <button type="submit">Get Illumination 101</button>
-            </form>
-        </div>
-    </section>
+
 
     <!-- FAQ Section -->
     <section>
@@ -922,7 +912,7 @@
         <div class="container">
             <h2>Ready to See What's Actually Possible?</h2>
             <p>Book a 20-minute call with a CC mentor. You'll know immediately whether this is for you.</p>
-            <a href="#book-call" class="cta-button">Book Your Call Now</a>
+            <a href="https://scheduler.zoom.us/frank-yang-cc/coachingcall" class="cta-button">Book Your Call Now</a>
         </div>
     </section>
 
@@ -954,12 +944,7 @@
         document.querySelectorAll('a[href="#book-call"]').forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
-                // Replace with your actual Calendly or booking URL
-                // Add Calendly prefill for intake questions:
-                // name: [optional]
-                // email: [optional] 
-                // Additional questions can be added as custom invitee questions in Calendly settings
-                window.location.href = 'https://calendly.com/contemplativecrossfit/20-min-mentor-call?back=1&month=2026-03';
+                window.location.href = 'https://scheduler.zoom.us/frank-yang-cc/coachingcall';
             });
         });
     </script>
